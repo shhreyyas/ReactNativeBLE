@@ -1,0 +1,2 @@
+APP_NAME=BLE-Plx
+APP_VARIANT=plx

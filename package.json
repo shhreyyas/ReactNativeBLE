@@ -1,0 +1,52 @@
+{
+  "name": "ReactNativeBLE",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android:manager": "react-native run-android --mode=managerdebug --appId com.reactnativeble.manager",
+    "android:manager-release": "react-native run-android --mode=managerrelease --appId com.reactnativeble.manager",
+    "android:plx": "react-native run-android --mode=plxdebug --appId com.reactnativeble.plx",
+    "android:plx-release": "react-native run-android --mode=plxrelease --appId com.reactnativeble.plx",
+
+    "ba": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "ra": "rm -rf android/app/src/main/res/drawable-hdpi &&  rm -rf android/app/src/main/res/drawable-mdpi &&  rm -rf android/app/src/main/res/drawable-xhdpi && rm -rf android/app/src/main/res/drawable-xxhdpi && rm -rf android/app/src/main/res/drawable-xxxhdpi && rm -rf android/app/src/main/res/raw && npx jetify",
+    "androidManagerDebugAPK": "yarn clean && cd android && ./gradlew assembleManagerDebug && killall -9 java && open ./android/app/build/outputs/apk/manager/debug",
+    "androidManagerReleaseAPK": "yarn clean && cd android && ./gradlew assembleManagerRelease && killall -9 java && open ./android/app/build/outputs/apk/manager/release",
+    "androidPlxDebugAPK": "yarn clean && cd android && ./gradlew assemblePlxDebug && killall -9 java && open ./android/app/build/outputs/apk/plx/debug",
+    "androidPlxReleaseAPK": "yarn clean && cd android && ./gradlew assemblePlxRelease && killall -9 java && open ./android/app/build/outputs/apk/plx/release",
+    
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "lint": "eslint .",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-native": "0.79.3",
+    "react-native-config": "^1.5.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "18.0.0",
+    "@react-native-community/cli-platform-android": "18.0.0",
+    "@react-native-community/cli-platform-ios": "18.0.0",
+    "@react-native/babel-preset": "0.79.3",
+    "@react-native/eslint-config": "0.79.3",
+    "@react-native/metro-config": "0.79.3",
+    "@react-native/typescript-config": "0.79.3",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.0.0",
+    "@types/react-test-renderer": "^19.0.0",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-test-renderer": "19.0.0",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
